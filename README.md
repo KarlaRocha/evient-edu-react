@@ -1,3 +1,7 @@
+# Ejemplo del Juego del Gato
+
+Esto es un ejemplo de como desarrollar un juego de gato usando React.
+
 # Antes de correr el proyecto por primera vez instale los paquetes
 
 ### `yarn`
