@@ -7,4 +7,5 @@ export const apiPaths = {
   allCells: 'http://localhost:8000/cells/',
   cellById: (id) => `http://localhost:8000/cells/${id}/`,
   playerMove: (id) => `http://localhost:8000/match/player-move/${id}/`,
+  playerWinner: (id) => `http://localhost:8000/match/winner/${id}/`,
 };
