@@ -54,7 +54,9 @@ export const Home = () => {
               <td>{d.active ? 'Yes' : 'No'}</td>
               <td>
                 {d.active && (
-                  <Link to={pagePaths.matchWtihArgs(d.id)}>Play</Link>
+                  <u>
+                    <Link to={pagePaths.matchWtihArgs(d.id)}>Play</Link>
+                  </u>
                 )}
               </td>
             </tr>
