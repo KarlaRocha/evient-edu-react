@@ -5,7 +5,7 @@ import { pagePaths } from '../pages';
 export function Root() {
   return (
     <div className="row h-100">
-      <div id="sidebar" className="col-3 border h-100">
+      <div id="sidebar" className="col-3 h-100">
         <nav>
           <ul>
             <li>
@@ -17,7 +17,7 @@ export function Root() {
           </ul>
         </nav>
       </div>
-      <div id="detail" className="col-9 h-100 border border-primary">
+      <div id="detail" className="col-9 h-100">
         <Outlet />
       </div>
     </div>
