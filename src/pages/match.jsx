@@ -31,12 +31,37 @@ export const Match = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Create a new WebSocket connection
+    const socket = new WebSocket('ws://localhost:8000/ws/match/');
+
+    // Connection opened
+    socket.onopen = () => {
+      console.log('WebSocket connected');
+    };
+
+    // Listen for messages
+    socket.onmessage = (event) => {
+      const data = JSON.parse(event.data.replaceAll("'", '"'));
+      if (Number(matchId) === Number(data.match_id)) getData();
+    };
+
+    // Connection closed
+    socket.onclose = () => {
+      console.log('WebSocket closed');
+    };
+
+    // Clean up the WebSocket connection on component unmount
+    return () => {
+      socket.close();
+    };
+  }, []);
+
   const getData = () => {
     fetch(apiPaths.matchById(matchId))
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          console.info({ data });
           setMatchData(data.data);
           if (data.data.turn === data.data.player_2.id)
             setCurrentTurn(data.data.player_2);

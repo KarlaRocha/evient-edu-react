@@ -15,6 +15,33 @@ export const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // Create a new WebSocket connection
+    const socket = new WebSocket('ws://localhost:8000/ws/matches/');
+
+    // Connection opened
+    socket.onopen = () => {
+      console.log('WebSocket connected');
+    };
+
+    // Listen for messages
+    socket.onmessage = (event) => {
+      const message = event.data;
+      console.log('Received message:', message);
+      getData();
+    };
+
+    // Connection closed
+    socket.onclose = () => {
+      console.log('WebSocket closed');
+    };
+
+    // Clean up the WebSocket connection on component unmount
+    return () => {
+      socket.close();
+    };
+  }, []);
+
   const getData = () => {
     fetch(apiPaths.allMatches)
       .then((response) => response.json())

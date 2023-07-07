@@ -1,6 +1,12 @@
-# Ejemplo del Juego del Gato
+# Ejemplo del Juego del Gato usando Websockets
 
-Esto es un ejemplo de como desarrollar un juego de gato usando React.
+## Bonus example (not part of curriculum)
+
+Esto es un ejemplo simple de como se puede implementar websockets en React usando el juego del gato como base.
+
+Para obtener la funcionalidad completa se tiene que correr el proyecto con el back correspondiente en el branch [websocket-example]('https://github.com/KarlaRocha/evient-edu-back/tree/websocket-example')
+
+Las páginas en donde se puede observar el uso de los websockets es en el home page. Se agrega un item cada vez que agrega un nuevo partido. Y también en la partida del juego del gato.
 
 # Antes de correr el proyecto por primera vez instale los paquetes
 
