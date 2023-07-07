@@ -4,7 +4,7 @@
 
 Esto es un ejemplo simple de como se puede implementar websockets en React usando el juego del gato como base.
 
-Para obtener la funcionalidad completa se tiene que correr el proyecto con el back correspondiente en el branch [websocket-example]('https://github.com/KarlaRocha/evient-edu-back/tree/websocket-example')
+Para obtener la funcionalidad completa se tiene que correr el proyecto con el back correspondiente en el branch [websocket-example]('https://github.com/KarlaRocha/evient-edu-back/tree/websocket-example)
 
 Las páginas en donde se puede observar el uso de los websockets es en el home page. Se agrega un item cada vez que agrega un nuevo partido. Y también en la partida del juego del gato.
 
