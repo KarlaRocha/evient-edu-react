@@ -1,6 +1,8 @@
 # Ejemplo del Juego del Gato
 
-Esto es un ejemplo de como desarrollar un juego de gato usando React.
+Esto es un ejemplo de como desarrollar un juego de gato usando React.\
+Tenga en cuenta que siempre hay más de una forma de resolver un problema.\
+Aquí el enfoque principal fue practicar usando React y familiarizarnos con el uso de las API.
 
 # Antes de correr el proyecto por primera vez instale los paquetes
 
