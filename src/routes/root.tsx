@@ -1,8 +1,9 @@
+import * as React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
 import { pagePaths } from '../pages';
 
-export function Root() {
+export const Root = () => {
   return (
     <div className="row h-100">
       <div id="sidebar" className="col-3 h-100">
@@ -22,4 +23,4 @@ export function Root() {
       </div>
     </div>
   );
-}
+};

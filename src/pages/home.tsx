@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { pagePaths } from './pagePaths';
 import { apiPaths } from '../apiPaths';
 
+import { MatchTable } from '../interfaces';
+import { MatchRow } from '../components';
+
 export const Home = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<MatchTable[]>();
 
   useEffect(() => {
     let isComplete = true;
@@ -33,7 +36,7 @@ export const Home = () => {
           <button className="btn btn-primary">New Game</button>
         </Link>
       </header>
-      <table class="table table-striped table-hover">
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -46,20 +49,13 @@ export const Home = () => {
         </thead>
         <tbody>
           {data?.map((d) => (
-            <tr>
-              <th scope="row">{d.id}</th>
-              <td>{d.player_1.name}</td>
-              <td>{d.player_2.name}</td>
-              <td>{d.updated_data}</td>
-              <td>{d.active ? 'Yes' : 'No'}</td>
-              <td>
-                {d.active && (
-                  <u>
-                    <Link to={pagePaths.matchWtihArgs(d.id)}>Play</Link>
-                  </u>
-                )}
-              </td>
-            </tr>
+            <MatchRow
+              id={d.id}
+              player_1={d.player_1}
+              player_2={d.player_2}
+              active={d.active}
+              updated_data={d.updated_data}
+            />
           ))}
         </tbody>
       </table>
